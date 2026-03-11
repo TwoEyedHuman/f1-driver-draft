@@ -1,0 +1,27 @@
+[
+    {
+      "round": 1,
+      "race_name": "Australian Grand Prix",
+      "date": "2026-03-08",
+      "results": [
+        { "driver": "Russell", "points": 25 },
+        { "driver": "Antonelli", "points": 18 },
+        { "driver": "Leclerc", "points": 15 },
+        { "driver": "Hamilton", "points": 12 },
+        { "driver": "Norris", "points": 10 },
+        { "driver": "Verstappen", "points": 9 },
+        { "driver": "Lindblad", "points": 6 },
+        { "driver": "Bearman", "points": 4 },
+        { "driver": "Bortoleto", "points": 2 },
+        { "driver": "Gasly", "points": 1 },
+        { "driver": "Ocon", "points": 0 },
+        { "driver": "Sainz", "points": 0 },
+        { "driver": "Albon", "points": 0 },
+        { "driver": "Lawson", "points": 0 },
+        { "driver": "Colapinto", "points": 0 },
+        { "driver": "Perez", "points": 0 },
+        { "driver": "Stroll", "points": 0 },
+        { "driver": "Alonso", "points": 0 }
+      ]
+    }
+]
