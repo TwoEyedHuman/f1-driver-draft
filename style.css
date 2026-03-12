@@ -34,3 +34,29 @@
         font-weight: bold;
         font-size: 1.1rem;
     }
+
+/* Summary Logo - Larger and clearer */
+.summary-logo {
+    width: 80px; /* Increased from height-based to width-based */
+    object-fit: contain;
+}
+
+/* Condensed summary card tweaks */
+.summary-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure the driver card stays a relative container for the absolute logo */
+.driver-card {
+    position: relative; 
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
