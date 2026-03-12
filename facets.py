@@ -1,90 +1,11 @@
 import streamlit as st
-import pandas as pd
-import json
-import os
-import base64
-
-# --- DATA LOADING & AGGREGATION ---
-def load_data():
-    with open("race-results.json") as f:
-        race_json = json.load(f)
-    with open("draft-results.json") as f:
-        auction_json = json.load(f)
-
-    # 1. Aggregate points across all races
-    all_race_results = []
-    for race in race_json:
-        all_race_results.extend(race['results'])
-    
-    # Create DataFrame and sum points by driver
-    df_all_points = pd.DataFrame(all_race_results)
-    df_totals = df_all_points.groupby('driver')['points'].sum().reset_index()
-
-    # 2. Load Auction Data
-    df_auction = pd.DataFrame(auction_json)
-
-    # 3. Merge: Auction list is our "Master List"
-    df = pd.merge(df_auction, df_totals, on="driver", how="left")
-    
-    # Clean up: Fill missing points with 0 and sort
-    df['points'] = df['points'].fillna(0).astype(int)
-    df = df.sort_values(by="driver")
-    
-    return df
+from utils import load_data, local_css, get_base64_image
 
 df = load_data()
 
-# --- HELPER: Image to Base64 ---
-def get_base64_image(image_path):
-    if os.path.exists(image_path):
-        with open(image_path, "rb") as img_file:
-            return base64.b64encode(img_file.read()).decode()
-    return None
-
 # --- STREAMLIT UI SETUP ---
 st.set_page_config(layout="wide", page_title="F1 Auction 2026")
-
-# Global CSS for the modern "Hero Card" look
-st.markdown("""
-    <style>
-    .driver-card {
-        position: relative;
-        height: 450px;
-        border-radius: 15px;
-        overflow: hidden;
-        margin-bottom: 25px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        color: white;
-    }
-    .driver-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-        filter: brightness(0.7);
-    }
-    .driver-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 20px;
-    }
-    .stat-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-    }
-    .points-badge {
-        background: rgba(255,255,255,0.2);
-        padding: 4px 12px;
-        border-radius: 8px;
-        font-weight: bold;
-        font-size: 1.1rem;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+local_css("style.css")
 
 st.title("🏎️ 2026 F1 Driver Auction Dashboard")
 
