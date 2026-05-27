@@ -1,6 +1,6 @@
 # Variables
 PYTHON_FILES := $(shell find . -name "*.py")
-APP_NAME := app.py
+APP_NAME := app/main.py
 
 .PHONY: help install run shell clean
 
