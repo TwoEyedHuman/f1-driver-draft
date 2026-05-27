@@ -1,5 +1,13 @@
 .venv/
-__pycache__/
+**/__pycache__/
+**/*.pyc
 .git/
-Pipfile*
+.gitignore
+Pipfile
+Pipfile.lock
 Makefile
+.streamlit/
+README.md
+draft-results.json
+race-results.json
+data/schema.md

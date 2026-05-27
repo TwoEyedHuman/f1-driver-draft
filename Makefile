@@ -6,10 +6,12 @@ APP_NAME := app/main.py
 
 help:
 	@echo "Available commands:"
-	@echo "  make install    - Install dependencies using pipenv"
-	@echo "  make run        - Run the Streamlit dashboard"
-	@echo "  make shell      - Enter the pipenv virtual environment"
-	@echo "  make clean      - Remove python cache files"
+	@echo "  make install      - Install dependencies using pipenv"
+	@echo "  make run          - Run the Streamlit dashboard"
+	@echo "  make shell        - Enter the pipenv virtual environment"
+	@echo "  make clean        - Remove python cache files"
+	@echo "  make docker-build - Build Docker image (f1-driver-stats)"
+	@echo "  make docker-run   - Run Docker image on port 8501"
 
 install:
 	pipenv install
@@ -26,6 +28,9 @@ clean:
 
 docker-build:
 	pipenv requirements > requirements.txt
-	docker buildx build --platform linux/arm64 -t f1-auction-app:latest --load .
-	@echo "Build complete. Image tagged as f1-auction-app:latest"
+	docker build -t f1-driver-stats .
+	@echo "Build complete. Image tagged as f1-driver-stats:latest"
+
+docker-run:
+	docker run -p 8501:8501 f1-driver-stats
 
