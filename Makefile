@@ -2,16 +2,20 @@
 PYTHON_FILES := $(shell find . -name "*.py")
 APP_NAME := app/main.py
 
-.PHONY: help install run shell clean
+.PHONY: help install run shell clean lint
 
 help:
 	@echo "Available commands:"
+	@echo "  make lint         - Run ruff linter"
 	@echo "  make install      - Install dependencies using pipenv"
 	@echo "  make run          - Run the Streamlit dashboard"
 	@echo "  make shell        - Enter the pipenv virtual environment"
 	@echo "  make clean        - Remove python cache files"
 	@echo "  make docker-build - Build Docker image (f1-driver-stats)"
 	@echo "  make docker-run   - Run Docker image on port 8501"
+
+lint:
+	pipenv run ruff check .
 
 install:
 	pipenv install
