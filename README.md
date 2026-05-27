@@ -189,87 +189,8 @@ fly auth whoami
 ### EPIC 1 Integration Gate
 
 - [ ] `streamlit run app/main.py` — app loads, standings render, charts work
-- [ ] Season selector populates from available CSV files automatically
-- [ ] Switching seasons updates all views correctly
 - [ ] No visible Streamlit toolbar
 - [ ] App usable at 800px wide viewport
-
----
-
-### EPIC 2 — Feature Polish
-
-**Epic Goal:** App is visually polished and data is easy to navigate. Ready to be a public-facing project on the personal site.
-
----
-
-#### Story 2.1 — Season Selector & Data Navigation
-
-**Context:** Epic 1 complete. App is structured and styled.
-
-**Assumptions:**
-- Multiple season CSV files exist in `data/`
-- Season selector currently works but may be basic
-
-**Tasks:**
-- Sidebar: season dropdown populated from `available_seasons()`
-- Default to the most recent season on load
-- Show season summary stats at top: total races, champion, dominant team
-- "Compare seasons" toggle — side-by-side stat comparison of two seasons (optional stretch goal, clearly marked as stretch)
-
-**Acceptance Criteria:**
-- [ ] Season dropdown shows all available seasons, sorted descending
-- [ ] Defaults to latest season on load
-- [ ] Season summary bar visible at top of page
-- [ ] Switching seasons updates all charts and tables without error
-
----
-
-#### Story 2.2 — Standings Table Polish
-
-**Context:** Story 2.1 complete.
-
-**Tasks:**
-- Standings table columns: Position, Driver, Team, Points, Wins, Podiums, Poles
-- Team color coded — each constructor has a distinct color accent
-- Sortable by any column
-- Highlight championship leader row
-- Mobile-friendly: table scrolls horizontally on narrow viewports
-
-**Acceptance Criteria:**
-- [ ] Table renders all columns from schema
-- [ ] Clicking a column header sorts correctly
-- [ ] Championship leader row visually distinct
-- [ ] Table scrolls horizontally at 400px width without breaking layout
-
----
-
-#### Story 2.3 — Driver Detail & Charts
-
-**Context:** Story 2.2 complete.
-
-**Tasks:**
-- Clicking a driver row opens a detail panel (or expander) showing:
-  - Points progression chart (if race-by-race data available; otherwise season totals)
-  - Wins / Podiums / Poles breakdown (bar chart)
-  - DNF count and percentage
-  - Head-to-head vs teammate (points delta)
-- Charts use F1 red theme from `config.toml`
-- If race-by-race data not available, show season aggregate charts only (no error)
-
-**Acceptance Criteria:**
-- [ ] Clicking any driver opens detail panel
-- [ ] All charts render without console errors
-- [ ] Detail panel closes/collapses cleanly
-- [ ] Graceful fallback if race-by-race data is absent
-
----
-
-### EPIC 2 Integration Gate
-
-- [ ] Full user journey: load app → select season → click driver → detail charts render
-- [ ] All seasons in `data/` load without errors
-- [ ] No Python exceptions during normal navigation
-- [ ] App usable on mobile viewport (600px)
 
 ---
 
@@ -281,7 +202,7 @@ fly auth whoami
 
 #### Story 3.1 — Dockerfile
 
-**Context:** Epic 2 complete. App fully functional locally.
+**Context:** App fully functional locally.
 
 **Assumptions:**
 - Python 3.12
