@@ -23,5 +23,45 @@
         { "driver": "Stroll", "points": 0 },
         { "driver": "Alonso", "points": 0 }
       ]
+    },
+    {
+      "round": 2,
+      "race_name": "Chinese Sprint",
+      "date": "2026-03-14",
+      "results": [
+        { "driver": "Russell", "points": 8 },
+        { "driver": "Leclerc", "points": 7 },
+        { "driver": "Hamilton", "points": 6 },
+        { "driver": "Norris", "points": 5 },
+        { "driver": "Antonelli", "points":4 },
+        { "driver": "Piastri", "points": 3 },
+        { "driver": "Lawson", "points": 2 },
+        { "driver": "Bearman", "points": 1 }
+      ]
+    },
+    {
+      "round": 3,
+      "race_name": "Chinese Grand Prix",
+      "date": "2026-03-015",
+      "results": [
+        { "driver": "Antonelli", "points": 26 },
+        { "driver": "Russell", "points": 18 },
+        { "driver": "Hamilton", "points": 15 },
+        { "driver": "Leclerc", "points": 12 },
+        { "driver": "Bearman", "points": 10 },
+        { "driver": "Gasly", "points": 8 },
+        { "driver": "Lawson", "points": 6 },
+        { "driver": "Hadjar", "points": 4 },
+        { "driver": "Sainz", "points": 2 },
+        { "driver": "Colapinto", "points": 1 },
+        { "driver": "Hulkenberg", "points": 0 },
+        { "driver": "Lindblad", "points": 0 },
+        { "driver": "Bottas", "points": 0 },
+        { "driver": "Ocon", "points": 0 },
+        { "driver": "Perez", "points": 0 },
+        { "driver": "Verstappen", "points": 0 },
+        { "driver": "Alonso", "points": 0 },
+        { "driver": "Stroll", "points": 0 }
+      ]
     }
 ]

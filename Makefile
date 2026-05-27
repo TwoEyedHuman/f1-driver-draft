@@ -1,6 +1,6 @@
 # Variables
 PYTHON_FILES := $(shell find . -name "*.py")
-APP_NAME := facets.py
+APP_NAME := app.py
 
 .PHONY: help install run shell clean
 
@@ -23,3 +23,9 @@ shell:
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 	find . -type f -name "*.pyc" -delete
+
+docker-build:
+	pipenv requirements > requirements.txt
+	docker buildx build --platform linux/arm64 -t f1-auction-app:latest --load .
+	@echo "Build complete. Image tagged as f1-auction-app:latest"
+
