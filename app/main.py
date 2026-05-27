@@ -6,9 +6,11 @@ from app.data import load_season
 from app.standings import build_standings
 from app.components.season_selector import render_season_selector
 from app.components.driver_card import inject_card_css, render_driver_card
+from app.components.theme import inject_theme
 
 st.set_page_config(layout="wide", page_title="F1 Auction 2026")
 
+inject_theme()
 inject_card_css()
 
 # --- Sidebar controls ---
