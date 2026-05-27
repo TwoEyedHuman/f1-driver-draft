@@ -29,4 +29,4 @@ ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 
 EXPOSE 8501
 
-ENTRYPOINT ["streamlit", "run", "app.py"]
+ENTRYPOINT ["streamlit", "run", "app/main.py"]
