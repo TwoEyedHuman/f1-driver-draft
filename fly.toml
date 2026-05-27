@@ -1,0 +1,28 @@
+app = "f1-driver-stats"
+
+[build]
+
+[[services]]
+  internal_port = 8501
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 10
+    soft_limit = 5
+
+[[services.http_checks]]
+  path = "/_stcore/health"
+  interval = "15s"
+  timeout = "5s"
+
+[machines]
+  min_machines_running = 0
