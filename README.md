@@ -163,7 +163,6 @@ fly auth whoami
 
 **Assumptions:**
 - App will be embedded via iframe on the personal site
-- Should match the aesthetic established by the Bobiverse tracker
 
 **Tasks:**
 - Create `.streamlit/config.toml`:
@@ -176,13 +175,6 @@ fly auth whoami
   [client]
   toolbarMode = "minimal"
   showSidebarNavigation = false
-
-  [theme]
-  base = "dark"
-  primaryColor = "#e10600"       # F1 red
-  backgroundColor = "#1a1a1a"
-  secondaryBackgroundColor = "#2d2d2d"
-  textColor = "#ffffff"
   ```
 - Verify toolbar hidden at 800px wide viewport
 - Verify theme renders cleanly on dark background
