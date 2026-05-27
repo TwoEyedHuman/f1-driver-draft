@@ -24,7 +24,7 @@ selected_owner = st.sidebar.selectbox("Filter by Owner", owners)
 st.title("🏎️ 2026 F1 Driver Auction Dashboard")
 
 # --- Leaderboard ---
-st.subheader("Current Standings")
+st.subheader("Current F1 Standings")
 summary = build_standings(df)
 l_cols = st.columns(len(summary))
 for idx, row in summary.iterrows():
