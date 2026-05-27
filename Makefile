@@ -15,7 +15,7 @@ install:
 	pipenv install
 
 run:
-	pipenv run streamlit run $(APP_NAME)
+	PYTHONPATH=. pipenv run streamlit run $(APP_NAME)
 
 shell:
 	pipenv shell
